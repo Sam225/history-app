@@ -1,0 +1,95 @@
+<div >
+ <!--param:{{param}}
+-->
+    <ol class="breadcrumb">
+        <li><a href="/"><i class="glyphicon glyphicon-home">&ensp; </i>Accueil</a></li>
+        <li><a href="#/listeJson">Evenements</a></li>
+        <li class="active">Détail </li>
+    </ol>
+
+    <div class="container-fluid">
+        <div class="row ">
+          <div class="col-lg-3 ">
+              <a href="#" class="thumbnail">
+                  <img src="/assets/images/default.jpg"  width="250px" height="auto" alt="CI"/>
+
+              </a>
+
+          </div>
+
+            <div class="col-lg-7">
+                <div class="">
+
+                    <ul class="media-list" ng-repeat=" event in eventDetail" >
+                        <li class="media">
+                            <div class="media-left">
+                                <a href="#">
+                                    <img class="media-object" src="/assets/images/icons/punaise-16.png" alt="Ivoire">
+                                </a>
+                            </div>
+                            <div class="media-body">
+                                <h4 class="media-heading text-info lead">Titre de l'évènement</h4>
+                                    <p>{{event.title | underscore | capitalize}}</p>
+                            </div>
+                        </li>
+                        <li class="media">
+                            <div class="media-left">
+                                <a href="#">
+                                    <img class="media-object" src="/assets/images/icons/punaise-16.png" alt="Ivoire">
+                                </a>
+                            </div>
+                            <div class="media-body">
+                                <h4 class="media-heading text-info lead">Description</h4>
+                                    <p >{{event.description  | underscore |capitalize }}</p>
+                            </div>
+                        </li>
+                        <li class="media">
+                            <div class="media-left">
+                                <a href="#">
+                                    <img class="media-object" src="/assets/images/icons/punaise-16.png" alt="Ivoire">
+                                </a>
+                            </div>
+                            <div class="media-body">
+                                <h4 class="media-heading text-info lead">Pays</h4>
+                                <p>{{country(event.countryId)}}</p>
+                            </div>
+                        </li>
+                        <li class="media">
+                            <div class="media-left">
+                                <a href="#">
+                                    <img class="media-object" src="/assets/images/icons/punaise-16.png" alt="Ivoire">
+                                </a>
+                            </div>
+                            <div class="media-body ">
+                                <h4 class="media-heading text-info lead">Date début</h4>
+                               {{event.dateEvent | date:'dd/MM/yyyy HH:mm:ss Z' }}
+                            </div>
+                        </li>
+
+
+                        <li class="media">
+                            <div class="media-left">
+                                <a href="#">
+                                    <img class="media-object" src="/assets/images/icons/punaise-16.png" alt="Ivoire">
+                                </a>
+                            </div>
+                            <div class="media-body">
+                                <h4 class="media-heading text-info">Date fin</h4>
+                                <p>{{event.dateEndEvent | date:'dd/MM/yyyy HH:mm:ss Z' }}</p>
+                            </div>
+                        </li>
+
+                    </ul>
+
+
+
+
+
+                </div>
+
+             </div>
+
+
+         </div>
+    </div>
+</div>

@@ -1,0 +1,29 @@
+@(event: List[IvoireModel.Event],user:User)
+
+@main("History Ivoire - Events",Some(user)) {
+
+<div>
+    Cliquez <a class="btn btn-warning" href="#/listeJson">Events</a>    <br/>
+    <br/>
+    <ul class="nav nav-tabs">
+        <li role="presentation" class="active"><a href="#/listeJson">Evenements</a></li>
+      @*  <li role="presentation"><a href="#">Profile</a></li>
+        <li role="presentation"><a href="#">Messages</a></li>*@
+    </ul>
+        <br/>
+</div>    
+    <div ng-view></div>
+  @*<div>
+    <table >
+        @for(l <- event){
+ <tr>
+     <td> @l.title</td>
+     <td> @l.description</td>
+ </tr>
+
+        }
+    </table>
+  </div>*@
+
+
+}

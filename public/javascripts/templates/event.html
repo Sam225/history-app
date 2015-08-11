@@ -1,0 +1,34 @@
+<div loading-container="tableParams.settings().$loading">
+   <!-- <table >
+        <tr ng-repeat="l in liste">
+            <td>{{l.title}}</td>
+            <td>{{l.description}}</td>
+        </tr>
+    </table>-->
+<div class="row">
+    <span class="pull-left"><h3 class="text-info"> <i class="glyphicon glyphicon-list"></i>Liste des Evenements </h3></span>
+</div>
+
+    <!--<p><strong>Filter:</strong> {{tableParams.filter()|json}}-->
+<p> </p>
+    <table ng-table="tableParams" show-filter="true" class="table">
+        <tr ng-repeat="event in $data">
+            <td data-title="'Description'" filter="{ 'title': 'text' }">
+                <a href="#/event/{{event.id}}"> {{event.title | underscore }}</a>
+
+            </td>
+            <td data-title="'Date debut'">
+                {{event.dateEvent |date:'dd/MM/yyyy HH:mm:ss Z'}}
+            </td>
+            <td data-title="'Date fin'">
+                {{event.dateEndEvent | date:'dd/MM/yyyy HH:mm:ss Z'}}
+            </td>
+        </tr>
+    </table>
+
+   <!-- <table ng-table >
+        <tr ng-repeat="l in liste">
+           <td data-title="'Name'">{{l.title}}</td>
+        </tr>
+    </table>-->
+</div>
